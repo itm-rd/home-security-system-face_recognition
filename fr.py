@@ -7,13 +7,13 @@ from gpiozero import  DistanceSensor,Button,MotionSensor,LED
 import time
 import os
 
-chat_id=1844913589
-bot_token = '5457568426:AAHcrjyBI6ACkf23Nb-kAbuiCqX9f3uMysM'
-bot=telepot.Bot('5457568426:AAHcrjyBI6ACkf23Nb-kAbuiCqX9f3uMysM')
+chat_id=........
+bot_token = '.......'
+bot=telepot.Bot('........')
 
 def telegram_bot_sendtext(bot_message):
-   bot_token = '5457568426:AAHcrjyBI6ACkf23Nb-kAbuiCqX9f3uMysM'
-   bot_chatID = '1844913589'
+   bot_token = '..........'
+   bot_chatID = '.........'
    send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + bot_message
    response = requests.get(send_text)
 
@@ -101,7 +101,7 @@ try:
                 process_this_frame = not process_this_frame
                 # Display the results
                 for (top, right, bottom, left), name in zip(face_locations, face_names):
-                    # Scale back up face locations since the frame we detected in was scaled to 1/4 size
+              
                     top *= 4
                     right *= 4
                     bottom *= 4
@@ -109,8 +109,6 @@ try:
 
                     # Draw a box around the face
                     cv2.rectangle(frame, (left, top), (right, bottom), (255, 0, 0), 2)
-
-                    # Draw a label with a name below the face
                     cv2.rectangle(frame, (left, bottom - 35), (right, bottom), (0, 0, 255), cv2.FILLED)
                     font = cv2.FONT_HERSHEY_DUPLEX
                     cv2.putText(frame, name, (left + 6, bottom - 6), font, 1.0, (255, 255, 255), 1)
@@ -120,9 +118,6 @@ try:
                 # Hit 'q' on the keyboard to quit!
                 if cv2.waitKey(1) & 0xFF == ord('q'):
                     break
-# Release handle to the webcam
 except KeyboardInterrupt:
-  #p.start(5.8)
-  #GPIO.cleanup()
   video_capture.release()
   cv2.destroyAllWindows()
